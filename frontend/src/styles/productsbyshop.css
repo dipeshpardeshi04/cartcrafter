@@ -1,0 +1,179 @@
+/* productsbyshop.css */
+
+* {
+    box-sizing: border-box; /* Ensures consistent padding and margin */
+    margin: 0; /* Resets default margin */
+    padding: 0; /* Resets default padding */
+  }
+  .text-xll{
+    font-size: 1.5rem;
+    text-align: start;
+  }
+  body {
+    font-family: Arial, sans-serif; /* Consistent font */
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Dark text */
+  }
+  
+  h1 {
+    text-align: center; /* Center heading */
+    font-size: 2rem; /* Size for heading */
+    margin-bottom: 1.5rem; /* Space below heading */
+    color: #007bff; /* Blue color for heading */
+  }
+  .text-xl{
+    /* font-size: 1.5rem; */
+    text-align: start;
+  }
+  .byshop{
+    padding: 20px;
+  }
+  .sell-btn {
+    padding: auto;
+    margin: auto;
+    color: white;
+    margin-bottom: 20px;
+  } 
+  
+   .sell-btn:hover {
+    background-color: #0c270e;
+  }
+  
+  .grid {
+    display: grid; /* Grid layout for products */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 1.5rem; /* Space between grid items */
+  }
+  
+  .bg-white {
+    background-color: white; /* White background for cards */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+    overflow: hidden; /* Prevent overflow from child elements */
+    transition: transform 0.2s; /* Smooth transition for hover effect */
+  }
+  
+  .bg-white:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+  }
+  
+  .product-info {
+    padding: 1rem; /* Padding inside product cards */
+  }
+  
+  .product-info img {
+    width: 100%; /* Responsive image */
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Cover to maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for images */
+  }
+  
+  .product-info h2 {
+    font-size: 1.5rem; /* Size for product names */
+    margin-bottom: 0.5rem; /* Space below product name */
+    color: #333; /* Dark text */
+  }
+  
+  .product-info p {
+    margin: 0.5rem 0; /* Space between paragraphs */
+  }
+  
+  .text-blue-500 {
+    color: #ffffff; /* Bootstrap primary color */
+    font-weight: bold; /* Bold text for button */
+    border: 1px solid transparent; /* Border for button */
+    border-radius: 5px; /* Rounded corners */
+    padding: 0.5rem; /* Padding for button */
+    text-align: center; /* Center button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  }
+  .shopbg {
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    height: 35%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 20px; /* Inner spacing */
+    margin-bottom: 20px; /* Space below the shop card */
+    transition: transform 0.2s; /* Animation for hover effect */
+    background-image: url("https://th.bing.com/th/id/OIP.Zgb5ZbC8FlOXlcl6CtEKCQAAAA?rs=1&pid=ImgDetMain");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.shop-title {
+  font-size: 2rem; /* Large font size for the title */
+  font-weight: bold; /* Bold text */
+  color: #2c3e50; /* Darker color for the title */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+.shop-description {
+  font-size: 1.5rem; /* Medium font size for the description */
+  color: #34495e; /* Slightly lighter than title */
+  margin-bottom: 8px; /* Space below the description */
+  line-height: 1.5; /* Line height for readability */
+}
+
+.shop-address {
+  font-size: 1.5rem; /* Same size for address */
+  color: #34495e; /* Consistent color with description */
+  margin-bottom: 8px; /* Space below the address */
+  line-height: 1.5; /* Line height for readability */
+}
+
+.shop-owner {
+  font-size: 1.5rem; /* Same size for owner */
+  color: #34495e; /* Consistent color */
+  margin-bottom: 20px; /* Space below the owner */
+  line-height: 1.5; /* Line height for readability */
+}
+
+
+
+
+.shopbg h1, .shopbg p {
+    margin: 0; /* Remove default margin */
+    color: #333; /* Dark gray text for better readability */
+}
+
+.shopbg h1 {
+    font-size: 1.8rem; /* Larger font for shop name */
+    margin-bottom: 10px; /* Space below shop name */
+}
+
+.shopbg p {
+    font-size: 1.2rem; /* Medium font size for details */
+    line-height: 1.5; /* Line height for better readability */
+    margin-bottom: 5px; /* Space between paragraphs */
+}
+
+
+  .text-blue-500:hover {
+    background-color: #007bff; /* Blue background on hover */
+    /* color: white; White text on hover */
+  }
+  
+  .text-center {
+    text-align: center; /* Center text */
+  }
+  
+  .text-red-500 {
+    color: #dc3545; /* Red color for error messages */
+  }
+  img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+  
+    .grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust grid on smaller screens */
+    }
+  }
+  

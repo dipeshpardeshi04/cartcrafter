@@ -1,0 +1,173 @@
+.card-items-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 2vw;
+    font-size: 1.5vw;
+    text-align: start;
+    justify-content: start;
+}
+.empty-cart {
+  display: flex;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center;     /* Vertically center the content */
+  height: 100vh;           /* Full viewport height */
+  font-size: 1.5rem;       /* Larger font size for the message */
+  color: #6c757d;          /* Gray color for the text */
+  background-color: #f8f9fa; /* Light background */
+  text-align: center;      /* Center align the text */
+  padding: 1rem;           /* Padding for some spacing */
+  border: 2px dashed #dee2e6; /* Dashed border to emphasize the empty state */
+  border-radius: 0.5rem;   /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#buttonc{
+    position:absolute;
+    right: 25vw;
+    font-size: 1vw;
+    background-color: whitesmoke;
+    border-radius: 30px;
+    border: 1px solid rgb(55, 255, 0);
+    width: 8vw;
+    height: 3vw;
+    cursor: pointer;
+}
+/* .card-items-title img{
+    width: 5vw;
+    height: 8vw;
+    border-radius: 100%;
+    margin-right: 1vw;
+} */
+
+.cart-image {
+  width: 20px; /* Make the image responsive */
+  max-width: 50px; 
+  max-height: 50px;
+  height: 20px; /* Maintain aspect ratio */
+  border-radius: 100%; /* Optional: adds rounded corners */
+}
+/* card items */
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+  }
+
+  .cart-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .cart-header, .cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .cart-header {
+    background-color: #f9f9f9;
+  }
+
+  .cart-item {
+    align-items: center;
+  }
+
+  .cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+
+  .product-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+
+  .quantity {
+    margin-right: 20px;
+  }
+
+  .total-price {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .grand-total {
+    padding: 15px;
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    border-top: 2px solid #ddd;
+  }
+
+  @media(max-width: 768px) {
+    .cart-header, .cart-item {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .cart-item img {
+      margin: 0 auto 10px;
+    }
+
+    .product-info {
+      flex-direction: column;
+    }
+  }
+
+  .remove-button {
+    background-color: #ff4d4f; /* Red color */
+    color: white;
+    border: none;
+    padding: 6px 12px; /* Smaller padding for compact size */
+    margin: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.875rem; /* Smaller font size */
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: auto; /* Button adjusts to content width */
+    max-width: 150px; /* Limit max width */
+  }
+  
+  .remove-button:hover {
+    background-color: #d9363e; /* Darker red on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+  }
+  
+  .remove-button:active {
+    background-color: #b12a2b; /* Even darker red when clicked */
+    transform: translateY(0); /* Reset on click */
+  }
+  
+  /* Media Query for smaller screens */
+  @media (max-width: 600px) {
+    .remove-button {
+      font-size: 0.75rem; /* Slightly smaller font on smaller screens */
+      padding: 5px 10px; /* Adjust padding for smaller screens */
+      max-width: 120px; /* Limit width on smaller screens */
+    }
+  }
+  

@@ -1,0 +1,139 @@
+/* Home.css */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Light background for contrast */
+  color: #343a40; /* Dark text color */
+}
+
+.App {
+  padding: 2rem; /* Padding around the app */
+}
+
+.hero {
+  /* background-color: #007bff;  */
+  background-image: url("https://static.vecteezy.com/system/resources/previews/004/591/189/large_2x/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-free-vector.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgba(255, 255, 255, 0.816); /* Hero text color */
+  padding: 2rem; /* Padding for hero */
+  text-align: center; /* Center text */
+  border-radius: 0.5rem; /* Rounded corners */
+  margin-bottom: 2rem; /* Space below hero */
+}
+.hero h1 {
+  font-size: 3rem; /* Increase font size */
+  margin-bottom: 1rem; /* Space below heading */
+  color: #ffffff;
+  text-shadow: #ffd900 2px 1px 0.8em; /* Reduced opacity for text shadow */
+}
+
+.info-section {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 1.5rem; /* Space between boxes */
+}
+
+.info-box {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  text-align: left;
+  overflow: hidden; /* Prevents content from spilling out */
+  text-overflow: ellipsis; /* Adds "..." to overflowing text */
+  word-wrap: break-word; /* Breaks long words onto the next line */
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  word-wrap: break-word; /* Breaks long shop names to the next line */
+}
+
+p {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  word-wrap: break-word; /* Ensures long paragraphs wrap to the next line */
+}
+
+.info-box:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.info-icon {
+  font-size: 3rem; /* Size of the icon */
+  margin-bottom: 1rem; /* Space below icon */
+  display: flex; /* Use flex to center icon if needed */
+  justify-content: center; /* Center horizontally */
+}
+
+h1 {
+  font-size: 2.5rem; /* Size of hero heading */
+  margin-bottom: 1rem; /* Space below heading */
+}
+
+h3 {
+  font-size: 1.5rem; /* Size of shop name */
+  margin-bottom: 0.5rem; /* Space below shop name */
+  font-weight: bold; /* Make shop name bold */
+}
+
+p {
+  margin-bottom: 0.5rem; /* Space below paragraphs */
+  line-height: 1.5; /* Increased line height for readability */
+  font-size: 1rem; /* Increased font size for readability */
+}
+
+strong {
+  color: #007bff89; /* Highlight strong text with color */
+}
+
+button {
+  background-color: #28a745; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* No border */
+  border-radius: 0.25rem; /* Rounded corners */
+  padding: 0.5rem 1rem; /* Padding for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+  margin-top: 1rem; /* Space above button */
+  display: block; /* Make button block level for full width */
+  width: 100%; /* Full width for button */
+}
+
+button:hover {
+  background-color: #218838; /* Darker shade on hover */
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 1.5rem; /* Less padding on smaller screens */
+  }
+
+  .info-section {
+    padding: 0 1rem; /* Padding around the grid */
+  }
+
+  .info-box {
+    padding: 1rem; /* Less padding inside boxes */
+  }
+
+  h1 {
+    font-size: 2rem; /* Smaller heading on mobile */
+  }
+
+  h3 {
+    font-size: 1.25rem; /* Smaller shop name on mobile */
+  }
+}

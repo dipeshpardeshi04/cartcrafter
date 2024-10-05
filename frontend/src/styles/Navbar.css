@@ -1,0 +1,149 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  line-height: 1.6; /* Improve text readability */
+}
+
+/* Navbar Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dee2e6;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Logo Styles */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  text-decoration: none !important;
+}
+
+.logo:hover {
+  color: #007bff; /* Subtle hover effect for logo */
+}
+
+/* Navigation Menu */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #343a40;
+  font-weight: 500; /* Slightly bolder text */
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #007bff;
+}
+
+/* Publish Button Styles */
+.publish-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 40%;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.publish-btn {
+  color: white;
+  font-size: 1vw; /* Keep this as it is or adjust if necessary */
+  background-color: rgb(1, 1, 1);
+  border-radius: 30px;
+  border: 1px solid #007bff;
+  padding: 0.5vw 1vw; /* Add padding for better spacing around the text */
+  height: auto; /* Change height to auto to let it adjust based on content */
+  min-height: 3vw; /* Set a minimum height if you want it to remain visually consistent */
+  cursor: pointer;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+
+.publish-btn:hover {
+  background-color: #007bff;
+  transform: scale(1.05); /* Slight button scale on hover */
+}
+
+/* Profile Icon Styles */
+.profile-icon1 {
+  background: none;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #343a40;
+}
+.profile-icon1:hover {
+  color: #007bff;
+}
+/* Media Queries for Responsiveness */
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+    padding: 1rem; /* Consistent padding */
+  }
+
+  .logo {
+    font-size: 1.6rem; /* Slightly smaller logo size for mobile */
+    margin-bottom: 1rem; /* Space below the logo */
+  }
+
+  .nav {
+    flex-direction: column; /* Change this to column to stack nav items */
+    width: 100%; /* Full width */
+    gap: 0.5rem; /* Reduced gap for tighter spacing */
+  }
+
+  .nav a {
+    width: 100%; /* Full width for each nav item */
+    padding: 0.75rem 1rem; /* Consistent padding */
+    text-align: center; /* Center text */
+    background-color: #f8f9fa; /* Background for nav items */
+    border-radius: 0.25rem; /* Rounded corners */
+    font-size: 1.1rem; /* Increase font size for mobile */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+  }
+
+  .nav a:hover {
+    background-color: #e9ecef; /* Change background on hover */
+    color: #007bff; /* Change text color on hover */
+  }
+
+  .publish-btn {
+    width: 100%; /* Full width for the button */
+    padding: 0.75rem; /* Adjust padding for larger button */
+    font-size: 1.1rem; /* Increased font size for mobile */
+    border-radius: 20px; /* Keep the existing border radius */
+    margin: 0.5rem 0; /* Margin above and below the button */
+    box-sizing: border-box; /* Include padding in total width */
+  }
+
+  .profile-icon1 {
+    margin-top: 1rem; /* Space above the profile icon */
+    font-size: 1.8rem; /* Slightly larger icon on mobile */
+  }
+}

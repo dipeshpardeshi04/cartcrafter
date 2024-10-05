@@ -1,0 +1,92 @@
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.add-shop-button,
+.action-button {
+  background-color: #007bff; /* Green */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+.add-shop-button:hover,
+.action-button:hover {
+  background-color: #007bff; /* Darker green */
+}
+
+.search-input {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.shop-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.shop-table th,
+.shop-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left; /* Align text to the left for better readability */
+}
+
+.error {
+  color: red;
+}
+
+.loading {
+  text-align: center;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* Stack header items vertically on small screens */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .add-shop-button,
+  .action-button {
+    width: 100%; /* Full-width buttons on small screens */
+    margin-top: 10px; /* Space between buttons */
+  }
+
+  .search-input {
+    max-width: 100%; /* Allow search input to take full width */
+  }
+
+  .shop-table {
+    font-size: 14px; /* Smaller font size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px; /* Less padding on very small screens */
+  }
+
+  .shop-table th,
+  .shop-table td {
+    padding: 6px; /* Reduce padding for smaller screens */
+  }
+}

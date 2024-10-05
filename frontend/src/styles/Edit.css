@@ -1,0 +1,98 @@
+/* Edit.css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif; /* Set font family for consistency */
+    background-color: #f8f9fa; /* Light background color */
+    color: #343a40; /* Dark text color */
+  }
+  
+  .max-w-7xl {
+    max-width: 80rem; /* Set max width for the container */
+    margin: auto; /* Center the container */
+  }
+  
+  .py-10 {
+    padding-top: 2.5rem; /* Top padding */
+    padding-bottom: 2.5rem; /* Bottom padding */
+  }
+  
+  .px-4 {
+    padding-left: 1rem; /* Left padding */
+    padding-right: 1rem; /* Right padding */
+  }
+  
+  .sm\:px-6 {
+    padding-left: 1.5rem; /* Larger left padding on small screens */
+    padding-right: 1.5rem; /* Larger right padding on small screens */
+  }
+  
+  .lg\:px-8 {
+    padding-left: 2rem; /* Larger left padding on large screens */
+    padding-right: 2rem; /* Larger right padding on large screens */
+  }
+  
+  h1 {
+    font-size: 2rem; /* Set heading size */
+    margin-bottom: 1.5rem; /* Space below heading */
+    color: #007bff; /* Blue color for the heading */
+    text-align: center; /* Center the heading */
+  }
+  
+  form {
+    margin-top: 2rem; /* Space above the form */
+    padding: 1.5rem; /* Inner padding for the form */
+    border: 1px solid #dee2e6; /* Light border around the form */
+    border-radius: 0.5rem; /* Rounded corners for the form */
+    background-color: white; /* White background for the form */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    border: 1px solid #ced4da; /* Light border for inputs */
+    border-radius: 0.25rem; /* Rounded corners for inputs */
+    padding: 0.75rem; /* Inner padding for inputs */
+    margin-bottom: 1rem; /* Space below inputs */
+    width: 100%; /* Full width for inputs */
+    transition: border-color 0.3s; /* Smooth border transition */
+  }
+  
+  input[type="text"]:focus,
+  input[type="number"]:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove outline */
+  }
+  
+  button {
+    background-color: #007bff; /* Primary button background color */
+    color: white; /* Button text color */
+    border: none; /* No border for button */
+    border-radius: 0.25rem; /* Rounded corners for button */
+    padding: 0.5rem; /* Reduced inner padding for smaller buttons */
+    font-size: 0.875rem; /* Smaller font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: 100%; /* Full width for button */
+    transition: background-color 0.3s; /* Smooth background transition */
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.5rem; /* Smaller heading on mobile */
+    }
+  
+    form {
+      padding: 1rem; /* Less padding on mobile */
+    }
+  }
+  
