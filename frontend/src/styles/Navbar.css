@@ -1,4 +1,5 @@
 /* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,7 +22,7 @@ body {
   border-bottom: 1px solid #dee2e6;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 1;
   transition: all 0.3s ease-in-out;
 }
 
@@ -29,6 +30,7 @@ body {
 .logo {
   font-size: 1.8rem;
   font-weight: bold;
+  font-family: 'Pacifico', cursive;
   color: #000000;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -113,18 +115,20 @@ body {
   }
 
   .nav {
-    flex-direction: column; /* Change this to column to stack nav items */
+    flex-direction: row; /* Change this to column to stack nav items */
     width: 100%; /* Full width */
-    gap: 0.5rem; /* Reduced gap for tighter spacing */
+    gap: 0.2rem; /* Reduced gap for tighter spacing */
+    padding: 0;
+    margin: 0;
   }
 
   .nav a {
     width: 100%; /* Full width for each nav item */
-    padding: 0.75rem 1rem; /* Consistent padding */
+    padding: 0; /* Consistent padding */
     text-align: center; /* Center text */
     background-color: #f8f9fa; /* Background for nav items */
     border-radius: 0.25rem; /* Rounded corners */
-    font-size: 1.1rem; /* Increase font size for mobile */
+    font-size: 0.4rem; /* Increase font size for mobile */
     transition: background-color 0.3s ease; /* Smooth background transition */
   }
 
@@ -135,15 +139,17 @@ body {
 
   .publish-btn {
     width: 100%; /* Full width for the button */
-    padding: 0.75rem; /* Adjust padding for larger button */
+    padding: 0.3rem; /* Adjust padding for larger button */
     font-size: 1.1rem; /* Increased font size for mobile */
     border-radius: 20px; /* Keep the existing border radius */
-    margin: 0.5rem 0; /* Margin above and below the button */
+    margin: 1rem 0; /* Margin above and below the button */
     box-sizing: border-box; /* Include padding in total width */
   }
 
   .profile-icon1 {
-    margin-top: 1rem; /* Space above the profile icon */
-    font-size: 1.8rem; /* Slightly larger icon on mobile */
+    margin: 1rem 0;
+    font-size: 1.2rem; /* Slightly larger icon on mobile */
   }
 }
+
+/* Updations hamberger */

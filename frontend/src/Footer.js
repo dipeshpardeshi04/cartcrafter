@@ -7,6 +7,7 @@ const footer = () => {
     <div className="footer" id="footer">
       <div className="footer-content">
         <div className="footer-content-left">
+         
           <img id="footer-logo" src={"https://www.brandinginasia.com/wp-content/uploads/2023/01/Craft-Worldwide.png"} alt="" />
           <p>
           Welcome to CartCrafter! A user-friendly platform where local businesses can showcase their shops and products online, connecting with a wider audience effortlessly. Join today and grow your business digitally!

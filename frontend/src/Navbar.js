@@ -24,3 +24,5 @@ const Navbar = ({setshowlogin,setshowloginAdmin}) => {
 }
 
 export default Navbar
+
+

@@ -25,6 +25,7 @@
     flex-direction: column;
     align-items: start;
     gap: 20px;
+    text-align: start;
 }
 .footer-content-left li,.footer-content-right li,.footer-content-center li{
     list-style: none;
@@ -63,6 +64,12 @@ hr{
     }
     .footer-copyright{
         text-align: center;
+    }
+    .footer-content-right footer-ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        word-wrap: break-word;
     }
     
 }
