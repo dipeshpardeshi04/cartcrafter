@@ -11,7 +11,7 @@ from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
 from dukaan.serializers import ProductsSerializer,UserSerializer,CartSerializer,ShopsSerializer,ShopsCreateSerializer
-from myapp.models import Products,Cart,CartItemm,Shops #card
+from myapp.models import Productss,Cart,CartItemm,Shops #card
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import permission_classes
 # from rest_framework import serializers
@@ -246,7 +246,7 @@ def delete_shop(request, shop_id):
 # class dipesh(APIView): 
 def dipesh(request):
     if request.method=='GET':
-        student = Products.objects.all()
+        student = Productss.objects.all()
         student_serializer=ProductsSerializer(student,many=True)
         return JsonResponse(student_serializer.data,safe=False)
     
@@ -287,7 +287,7 @@ class ShopListAPI(generics.ListAPIView):
 def products_by_shop(request, shop_id):
     try:
         shop = Shops.objects.get(id=shop_id)  # Fetch the shop by ID
-        products = Products.objects.filter(shop=shop)  # Filter products by shop
+        products = Productss.objects.filter(shop=shop)  # Filter products by shop
         serializer = ProductsSerializer(products, many=True)  # Serialize the products
         return Response(serializer.data)
     except Shops.DoesNotExist:
@@ -299,9 +299,9 @@ def products_by_shop(request, shop_id):
 @permission_classes([IsAuthenticated])
 def update_product(request, product_id):
     try:
-        product = Products.objects.get(id=product_id, shop__owner=request.user)  # Ensure the user is the owner
+        product = Productss.objects.get(id=product_id, shop__owner=request.user)  # Ensure the user is the owner
         print(product)
-    except Products.DoesNotExist:
+    except Productss.DoesNotExist:
         return Response({"error": "Product not found or you are not the owner."}, status=status.HTTP_404_NOT_FOUND)
 
     serializer = ProductsSerializer(product, data=request.data, partial=True)  # Allow partial updates
@@ -316,8 +316,8 @@ def update_product(request, product_id):
 @permission_classes([IsAuthenticated])
 def delete_product(request, product_id):
     try:
-        product = Products.objects.get(id=product_id, shop__owner=request.user)  # Ensure the user is the owner
-    except Products.DoesNotExist:
+        product = Productss.objects.get(id=product_id, shop__owner=request.user)  # Ensure the user is the owner
+    except Productss.DoesNotExist:
         return Response({"error": "Product not found or you are not the owner."}, status=status.HTTP_404_NOT_FOUND)
 
     product.delete()
@@ -329,21 +329,21 @@ class ProductDetailView(APIView):
             print("hello")
             # Get the product from a specific shop
             shop = Shops.objects.get(id=shop_id)
-            product = Products.objects.get(id=product_id, shop=shop)
+            product = Productss.objects.get(id=product_id, shop=shop)
             
             # Serialize the product details
             serializer = ProductsSerializer(product)
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Shops.DoesNotExist:
             return Response({"error": "Shop not found"}, status=status.HTTP_404_NOT_FOUND)
-        except Products.DoesNotExist:
+        except Productss.DoesNotExist:
             return Response({"error": "Product not found"}, status=status.HTTP_404_NOT_FOUND)
 
 # from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Shops, Products
+from .models import Shops, Productss
 
 @csrf_exempt
 @api_view(['PATCH'])
@@ -351,8 +351,8 @@ from .models import Shops, Products
 def update_product11(request, shop_id, product_id):
     print("Received request data:", request.data)  # Debugging
     try:
-        product = Products.objects.get(id=product_id, shop__owner=request.user)
-    except Products.DoesNotExist:
+        product = Productss.objects.get(id=product_id, shop__owner=request.user)
+    except Productss.DoesNotExist:
         return Response({"error": "Product not found or you are not the owner."}, status=status.HTTP_404_NOT_FOUND)
 
     serializer = ProductsSerializer(product, data=request.data, partial=True)
@@ -416,7 +416,7 @@ def add_to_cart(request):
     
     if user.is_authenticated:
         cart, created = Cart.objects.get_or_create(user=user)
-        product = Products.objects.get(id=product_id)
+        product = Productss.objects.get(id=product_id)
         cart_item, created = CartItemm.objects.get_or_create(cart=cart, product=product)
         cart_item.quantity = quantity
         cart_item.save()

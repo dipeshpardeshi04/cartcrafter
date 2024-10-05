@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from myapp.models import Products,Cart,CartItemm,Shops
+from myapp.models import Productss,Cart,CartItemm,Shops
 # from django.contrib.auth import get_user_model
 
 # Owner = get_user_model()
@@ -40,11 +40,11 @@ class LoginSerializer(serializers.Serializer):
 
 class ProductsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Products
+        model = Productss
         fields = ['id', 'prod_name', 'description', 'price', 'created_at', 'shop', 'category', 'quantaty'] 
 
     def create(self, validated_data):
-        return Products.objects.create(**validated_data)
+        return Productss.objects.create(**validated_data)
         
         
         

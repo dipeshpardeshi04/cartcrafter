@@ -51,8 +51,21 @@
 }
 
 .error {
-  color: red;
+  color: #fff; /* White text color for better contrast */
+  background-color: #d9534f; /* Bootstrap danger color */
+  padding: 10px 15px; /* Add padding for space around the text */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Adjust font size */
+  font-weight: bold; /* Make text bold */
+  margin: 10px 0; /* Add margin above and below */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
+
+.error:hover {
+  background-color: #c9302c; /* Darker shade on hover */
+}
+
 
 .loading {
   text-align: center;

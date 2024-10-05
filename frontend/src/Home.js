@@ -66,7 +66,7 @@ const Home = ({onShopClick,onShopnameClick1}) => {
     onShopClick(shop.id);
     onShopnameClick1(shop.shopname);
   }}>
-    View Products
+    View Shop
   </button>
 </Link>
             </div>

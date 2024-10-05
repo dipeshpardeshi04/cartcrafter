@@ -55,7 +55,7 @@ const ProductsByShopowner = ({ shopId, onproClick, ulrshop }) => {
         <div className="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-8">Products for Shop Having ID:  {shopId}</h1>
             <p className='text-xl'>Share Shop link to Customer</p>
-            <p className='text-xl'><a href={`http://localhost:3000/shop/${shopId}/${ulrshop}`}>{`http://localhost:3000/shop/${shopId}/${ulrshop}`}</a></p>
+            <p className='text-xl'><a href={`https://cartcrafter.netlify.app/shop/${shopId}/${ulrshop}`}>{`https://cartcrafter.netlify.app/shop/${shopId}/${ulrshop}`}</a></p>
             <Link to="/pdfgenerator"><button className="sell-btn">Sell Products</button></Link>
             {products.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

@@ -17,7 +17,7 @@ class Shops(models.Model):
     def __str__(self):
         return self.shopname
 
-class Products(models.Model):
+class Productss(models.Model):
     shop = models.ForeignKey(Shops, on_delete=models.CASCADE, related_name='products' , default=1)
     
     prod_name = models.CharField(max_length=100)
@@ -39,7 +39,7 @@ class Cart(models.Model):
 
 class CartItemm(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='items' ,null=True)
-    product = models.ForeignKey(Products, on_delete=models.CASCADE)
+    product = models.ForeignKey(Productss, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
 
     def __str__(self):
