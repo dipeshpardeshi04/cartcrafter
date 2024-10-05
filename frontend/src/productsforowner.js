@@ -10,7 +10,7 @@ const ProductsByShopowner = ({ shopId, onproClick, ulrshop }) => {
     
     const fetchProducts = useCallback(async () => {
         try {
-            const response = await axios.get(`http://127.0.0.1:8000/api/shopowner/${shopId}/products/`);
+            const response = await axios.get(`https://cartcrafter.onrender.com/api/shopowner/${shopId}/products/`);
             setProducts(response.data);
         } catch (err) {
             console.error('Error fetching products:', err);
@@ -35,7 +35,7 @@ const ProductsByShopowner = ({ shopId, onproClick, ulrshop }) => {
                 },
             };
             
-            await axios.delete(`http://127.0.0.1:8000/api/products/${productId}/delete/`, config);
+            await axios.delete(`https://cartcrafter.onrender.com/api/products/${productId}/delete/`, config);
             setProducts(products.filter(product => product.id !== productId));
         } catch (err) {
             console.error('Error deleting product:', err);

@@ -20,7 +20,7 @@ const AdminLogin = ({ setshowloginAdmin }) => {
 
     if (currState === 'Sign Up') {
       try {
-        const response = await axios.post('http://127.0.0.1:8000/api/ownerregister/', {
+        const response = await axios.post('https://cartcrafter.onrender.com/api/ownerregister/', {
           email,
           username, // Send name only for Sign Up
           password,
@@ -39,7 +39,7 @@ const AdminLogin = ({ setshowloginAdmin }) => {
       }
     } else {
       try {
-        const response = await axios.post('http://127.0.0.1:8000/api/ownerlogin/', {
+        const response = await axios.post('https://cartcrafter.onrender.com/api/ownerlogin/', {
           username,
           password,
         }, {

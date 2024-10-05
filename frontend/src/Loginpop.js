@@ -29,7 +29,7 @@ const Loginpopup = ({ setshowlogin }) => {
     try {
       // const csrfToken = getCsrfToken();  // Get the CSRF token
       console.log(email, username, password);
-      const response = await axios.post('http://127.0.0.1:8000/api/register/', {
+      const response = await axios.post('https://cartcrafter.onrender.com/api/register/', {
         email,
         username , // Send name only for Sign Up
         password,
@@ -50,7 +50,7 @@ const Loginpopup = ({ setshowlogin }) => {
       // const csrfToken = getCsrfToken();  // Get the CSRF token
       // const csrfToken = cookie.get('csrftoken'); // Get CSRF token from cookies
 
-      const response = await axios.post('http://127.0.0.1:8000/api/login/', {
+      const response = await axios.post('https://cartcrafter.onrender.com/api/login/', {
         username,
         password
       }

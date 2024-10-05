@@ -13,7 +13,7 @@ const Home = ({onShopClick,onShopnameClick1}) => {
   useEffect(() => {
     const fetchShops = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/allshops/');
+        const response = await axios.get('https://cartcrafter.onrender.com/allshops/');
         setShops(response.data); // Set the shops data
         setLoading(false); // Turn off loading once data is fetched
       } catch (err) {

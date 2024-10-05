@@ -25,7 +25,7 @@ const ProductForm = ({shopId}) => {
     console.log(formData);
     try {
       const token = localStorage.getItem('token');  // Assuming you're using token-based authentication
-      const response = await axios.post('http://127.0.0.1:8000/api/products/',{
+      const response = await axios.post('https://cartcrafter.onrender.com/api/products/',{
         prod_name: productName,
         price,
         category,

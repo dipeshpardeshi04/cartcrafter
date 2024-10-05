@@ -32,7 +32,7 @@ const AddShop = ({ setshowlogin }) => {
       console.log('CSRF Token:', csrfToken);
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/createshop/",
+        "https://cartcrafter.onrender.com/createshop/",
         {
           shopname,
           category,

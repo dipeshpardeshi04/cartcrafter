@@ -15,7 +15,7 @@ const Card = () => {
   const fetchCartItems = async () => {
     const token = localStorage.getItem("token");
     try {
-      const response = await axios.get("http://127.0.0.1:8000/api/cart/", {
+      const response = await axios.get("https://cartcrafter.onrender.com/api/cart/", {
         headers: {
           Authorization: `Token ${token}`,
         },
@@ -38,7 +38,7 @@ const Card = () => {
     console.log("Removing item with ID:", itemId);  // Debugging log
     const token = localStorage.getItem("token");
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/cart/${itemId}/`, {
+      await axios.delete(`https://cartcrafter.onrender.com/api/cart/${itemId}/`, {
         headers: {
           Authorization: `Token ${token}`,
         },

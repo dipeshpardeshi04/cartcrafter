@@ -15,7 +15,7 @@ const PDFCreator = () => {
   const fetchProductDetails = async (index) => {
     try {
       const { productId } = products[index];
-      const response = await axios.get(`http://127.0.0.1:8000/api/shopowner/${shopId}/products/${productId}`, {
+      const response = await axios.get(`https://cartcrafter.onrender.com/api/shopowner/${shopId}/products/${productId}`, {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
         },
@@ -38,7 +38,7 @@ const PDFCreator = () => {
         return;
       }
 
-      const response = await axios.get(`http://127.0.0.1:8000/api/shops/${shopId}/`, {
+      const response = await axios.get(`https://cartcrafter.onrender.com/api/shops/${shopId}/`, {
         headers: {
           Authorization: `Token ${token}`,
           "Content-Type": "application/json", // Set content type if needed
@@ -65,7 +65,7 @@ const PDFCreator = () => {
       };
 
       const response = await axios.patch(
-        `http://127.0.0.1:8000/api/shopowner/1/products/${productId}/update/`,
+        `https://cartcrafter.onrender.com/api/shopowner/1/products/${productId}/update/`,
         { quantaty: newQuantity },
         config
       );
