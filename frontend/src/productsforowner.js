@@ -4,13 +4,14 @@ import "./styles/productsbyshop.css";
 import { Link } from 'react-router-dom';
 
 const ProductsByShopowner = ({ shopId, onproClick, ulrshop }) => {
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     
     const fetchProducts = useCallback(async () => {
         try {
-            const response = await axios.get(`https://cartcrafter.onrender.com/api/shopowner/${shopId}/products/`);
+            const response = await axios.get(`${backendUrl}/api/shopowner/${shopId}/products/`);
             setProducts(response.data);
         } catch (err) {
             console.error('Error fetching products:', err);
@@ -35,7 +36,7 @@ const ProductsByShopowner = ({ shopId, onproClick, ulrshop }) => {
                 },
             };
             
-            await axios.delete(`https://cartcrafter.onrender.com/api/products/${productId}/delete/`, config);
+            await axios.delete(`${backendUrl}/api/products/${productId}/delete/`, config);
             setProducts(products.filter(product => product.id !== productId));
         } catch (err) {
             console.error('Error deleting product:', err);
@@ -55,7 +56,7 @@ const ProductsByShopowner = ({ shopId, onproClick, ulrshop }) => {
         <div className="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold text-gray-800 mb-8">Products for Shop Having ID:  {shopId}</h1>
             <p className='text-xl'>Share Shop link to Customer</p>
-            <p className='text-xl'><a href={`https://cartcrafter.netlify.app/shop/${shopId}/${ulrshop}`}>{`https://cartcrafter.netlify.app/shop/${shopId}/${ulrshop}`}</a></p>
+            <p className='text-xl'><a href={`${backendUrl}/shop/${shopId}/${ulrshop}`}>{`https://cartcrafter.netlify.app/shop/${shopId}/${ulrshop}`}</a></p>
             <Link to="/pdfgenerator"><button className="sell-btn">Sell Products</button></Link>
             {products.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

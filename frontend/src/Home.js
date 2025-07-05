@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Footer from "./Footer.js";
 
 const Home = ({onShopClick,onShopnameClick1}) => {
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+  
   const [shops, setShops] = useState([]); // State to store shops data
   const [loading, setLoading] = useState(true); // State to manage loading state
   const [error, setError] = useState(null); // State to store any errors
@@ -13,7 +15,7 @@ const Home = ({onShopClick,onShopnameClick1}) => {
   useEffect(() => {
     const fetchShops = async () => {
       try {
-        const response = await axios.get('https://cartcrafter.onrender.com/allshops/');
+        const response = await axios.get(`${backendUrl}/allshops/`);
         setShops(response.data); // Set the shops data
         setLoading(false); // Turn off loading once data is fetched
       } catch (err) {
@@ -79,3 +81,5 @@ const Home = ({onShopClick,onShopnameClick1}) => {
 };
 
 export default Home;
+
+

@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { useNavigate, Link } from "react-router-dom"; // Import useNavigate
 
 const AddShop = ({ setshowlogin }) => {
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
   const [shopname, setShopname] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
@@ -32,7 +33,7 @@ const AddShop = ({ setshowlogin }) => {
       console.log('CSRF Token:', csrfToken);
 
       const response = await axios.post(
-        "https://cartcrafter.onrender.com/createshop/",
+        `${backendUrl}/createshop/`,
         {
           shopname,
           category,

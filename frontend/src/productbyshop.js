@@ -4,7 +4,7 @@ import axios from 'axios';
 import "./styles/productsbyshop.css";
 import { useParams } from 'react-router-dom';
 const ProductsByShop = () => {
-
+    const backendUrl = process.env.REACT_APP_BACKEND_URL;
     const [products, setProducts] = useState([]);
     const [shopDetails, setShopDetails] = useState(null); // State to store shop details
     const [loading, setLoading] = useState(true);
@@ -16,7 +16,7 @@ const ProductsByShop = () => {
         const fetchProducts = async () => {
             try {
 
-                const response = await axios.get(`https://cartcrafter.onrender.com/api/shop/${shopId}/products/`);
+                const response = await axios.get(`${backendUrl}/api/shop/${shopId}/products/`);
                 setProducts(response.data);
                 console.log(response.data);
             } catch (err) {
@@ -29,7 +29,7 @@ const ProductsByShop = () => {
 
         const fetchShopDetails = async () => {
             try {
-                const response = await axios.get(`https://cartcrafter.onrender.com/api/shops/${shopId}`);
+                const response = await axios.get(`${backendUrl}/api/shops/${shopId}`);
                 setShopDetails(response.data);
                 console.log("Shop details fetched:", response.data);
             } catch (err) {
@@ -55,7 +55,7 @@ const ProductsByShop = () => {
             };
 
             // Add the product to the cart
-            const response = await axios.post(`https://cartcrafter.onrender.com/api/cart/add/`, { product_id: productId }, config);
+            const response = await axios.post(`${backendUrl}/api/cart/add/`, { product_id: productId }, config);
             console.log('Product added to cart:', response.data);
             // Optionally show a success message or update UI state here
         } catch (err) {

@@ -29,6 +29,8 @@ class Productss(models.Model):
 
     def __str__(self):
         return self.prod_name
+    class Meta:
+        db_table = "productss_cartcrafter"
     
 class Carts(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -36,6 +38,9 @@ class Carts(models.Model):
 
     def __str__(self):
         return f"{self.user}'s Cart"
+    class Meta:
+        db_table = "carts_cartcrafter"
+    
 
 class CartItemm(models.Model):
     cart = models.ForeignKey(Carts, on_delete=models.CASCADE, related_name='items' ,null=True)
@@ -44,6 +49,8 @@ class CartItemm(models.Model):
 
     def __str__(self):
         return f"{self.product.prod_name} (x{self.quantity})"
+    class Meta:
+        db_table = "cartitemms_cartcrafter"
 
 # class ProductsItemm(models.Model):
 #     # cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='items' ,null=True)

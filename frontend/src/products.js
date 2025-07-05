@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -8,6 +6,7 @@ import "./styles/products.css";
 import toast from "react-hot-toast";
 
 const Products = ({ onShopClick1, onownershopClick,onShopnameClick1,shopadd }) => {
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
   const [shops, setShops] = useState([]);
   const [loading, setLoading] = useState(true); // Initially true to show loading
   const [error, setError] = useState(null);
@@ -15,7 +14,7 @@ const Products = ({ onShopClick1, onownershopClick,onShopnameClick1,shopadd }) =
   useEffect(() => {
     const fetchShops = async () => {
       try {
-        const response = await axios.get("https://cartcrafter.onrender.com/user_shops/", {
+        const response = await axios.get(`${backendUrl}/user_shops/`, {
           headers: {
             Authorization: `Token ${localStorage.getItem("token")}`, // Include your token here
           },

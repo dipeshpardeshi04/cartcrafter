@@ -11,7 +11,7 @@ from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
 from dukaan.serializers import ProductsSerializer,UserSerializer,CartSerializer,ShopsSerializer,ShopsCreateSerializer
-from myapp.models import Productss,Carts,CartItemm,Shops #card
+from cartcrafter.models import Productss,Carts,CartItemm,Shops #card
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import permission_classes
 # from rest_framework import serializers

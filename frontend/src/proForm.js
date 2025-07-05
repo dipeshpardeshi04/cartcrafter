@@ -3,6 +3,7 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 
 const ProductForm = ({shopId}) => {
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
   const [productName, setProductName] = useState('');
   const [price, setPrice] = useState('');
   const [category, setCategory] = useState('');
@@ -25,7 +26,7 @@ const ProductForm = ({shopId}) => {
     console.log(formData);
     try {
       const token = localStorage.getItem('token');  // Assuming you're using token-based authentication
-      const response = await axios.post('https://cartcrafter.onrender.com/api/products/',{
+      const response = await axios.post(`${backendUrl}/api/products/`,{
         prod_name: productName,
         price,
         category,

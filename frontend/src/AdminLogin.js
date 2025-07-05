@@ -5,6 +5,7 @@ import toast from 'react-hot-toast';
 import "./styles/Loginpop.css";
 // import  fetchShops from './products';
 const AdminLogin = ({ setshowloginAdmin }) => {
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
   const [currState, setcurrState] = useState('Sign Up');
   const [email, setEmail] = useState('');
   const [username, setName] = useState('');
@@ -20,7 +21,7 @@ const AdminLogin = ({ setshowloginAdmin }) => {
 
     if (currState === 'Sign Up') {
       try {
-        const response = await axios.post('https://cartcrafter.onrender.com/api/ownerregister/', {
+        const response = await axios.post(`${backendUrl}/api/ownerregister/`, {
           email,
           username, // Send name only for Sign Up
           password,
@@ -39,7 +40,7 @@ const AdminLogin = ({ setshowloginAdmin }) => {
       }
     } else {
       try {
-        const response = await axios.post('https://cartcrafter.onrender.com/api/ownerlogin/', {
+        const response = await axios.post(`${backendUrl}/api/ownerlogin/`, {
           username,
           password,
         }, {

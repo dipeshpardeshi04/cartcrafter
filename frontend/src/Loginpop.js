@@ -6,6 +6,7 @@ import cookie from 'js-cookie';
 import toast from 'react-hot-toast';
 
 const Loginpopup = ({ setshowlogin }) => {
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
   const [currState, setcurrState] = useState('Sign Up');
   const [email, setEmail] = useState('');
   const [username, setName] = useState('');
@@ -29,7 +30,7 @@ const Loginpopup = ({ setshowlogin }) => {
     try {
       // const csrfToken = getCsrfToken();  // Get the CSRF token
       console.log(email, username, password);
-      const response = await axios.post('https://cartcrafter.onrender.com/api/register/', {
+      const response = await axios.post(`${backendUrl}/api/register/`, {
         email,
         username , // Send name only for Sign Up
         password,
@@ -50,7 +51,7 @@ const Loginpopup = ({ setshowlogin }) => {
       // const csrfToken = getCsrfToken();  // Get the CSRF token
       // const csrfToken = cookie.get('csrftoken'); // Get CSRF token from cookies
 
-      const response = await axios.post('https://cartcrafter.onrender.com/api/login/', {
+      const response = await axios.post(`${backendUrl}/api/login/`, {
         username,
         password
       }

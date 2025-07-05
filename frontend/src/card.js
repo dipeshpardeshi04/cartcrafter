@@ -5,6 +5,7 @@ import "./styles/card.css";
 import cartimage from "./vector-add-to-cart-vector-icon.jpg"
 import toast from "react-hot-toast";
 const Card = () => {
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -16,7 +17,7 @@ const Card = () => {
   const fetchCartItems = async () => {
     const token = localStorage.getItem("token");
     try {
-      const response = await axios.get("https://cartcrafter.onrender.com/api/cart/", {
+      const response = await axios.get(`${backendUrl}/api/cart/`, {
         headers: {
           Authorization: `Token ${token}`,
         },
@@ -39,7 +40,7 @@ const Card = () => {
     console.log("Removing item with ID:", itemId);  // Debugging log
     const token = localStorage.getItem("token");
     try {
-      await axios.delete(`https://cartcrafter.onrender.com/api/cart/${itemId}/`, {
+      await axios.delete(`${backendUrl}/api/cart/${itemId}/`, {
         headers: {
           Authorization: `Token ${token}`,
         },

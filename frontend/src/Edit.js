@@ -3,6 +3,8 @@ import toast from 'react-hot-toast';
 import axios from 'axios';
 import './styles/Edit.css';
 const Edit = ({ productId }) => {
+            const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
     const [productName, setProductName] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
@@ -12,7 +14,7 @@ const Edit = ({ productId }) => {
     useEffect(() => {
         const fetchProductDetails = async () => {
             try {
-                const response = await axios.get(`https://cartcrafter.onrender.com/api/products/${productId}/`);
+                const response = await axios.get(`${backendUrl}/api/products/${productId}/`);
                 const { name, description, price, quantity } = response.data; // Adjust according to your API response structure
                 setProductName(name);
                 setDescription(description);
@@ -48,7 +50,7 @@ const Edit = ({ productId }) => {
                 },
             };
 
-            await axios.put(`https://cartcrafter.onrender.com/api/products/${productId}/update/`, updatedData, config);
+            await axios.put(`${backendUrl}/api/products/${productId}/update/`, updatedData, config);
             toast.success('Product updated successfully!');
             // Optionally, redirect or refresh the product list after update
         } catch (err) {

@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from myapp.models import Productss,Carts,CartItemm,Shops
+from cartcrafter.models import Productss,Carts,CartItemm,Shops
 # from django.contrib.auth import get_user_model
 
 # Owner = get_user_model()

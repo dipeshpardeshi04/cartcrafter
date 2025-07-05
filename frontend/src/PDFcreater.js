@@ -4,6 +4,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const PDFCreator = () => {
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
   const [shopId, setShopId] = useState("");
   const [shopDetails, setShopDetails] = useState(null); // State to store shop details
   const [products, setProducts] = useState([{ productId: "", quantity: "" }]);
@@ -15,7 +16,7 @@ const PDFCreator = () => {
   const fetchProductDetails = async (index) => {
     try {
       const { productId } = products[index];
-      const response = await axios.get(`https://cartcrafter.onrender.com/api/shopowner/${shopId}/products/${productId}`, {
+      const response = await axios.get(`${backendUrl}/api/shopowner/${shopId}/products/${productId}`, {
         headers: {
           Authorization: `Token ${localStorage.getItem("token")}`,
         },
@@ -38,7 +39,7 @@ const PDFCreator = () => {
         return;
       }
 
-      const response = await axios.get(`https://cartcrafter.onrender.com/api/shops/${shopId}/`, {
+      const response = await axios.get(`${backendUrl}/api/shops/${shopId}/`, {
         headers: {
           Authorization: `Token ${token}`,
           "Content-Type": "application/json", // Set content type if needed
@@ -65,7 +66,7 @@ const PDFCreator = () => {
       };
 
       const response = await axios.patch(
-        `https://cartcrafter.onrender.com/api/shopowner/1/products/${productId}/update/`,
+        `${backendUrl}/api/shopowner/1/products/${productId}/update/`,
         { quantaty: newQuantity },
         config
       );
