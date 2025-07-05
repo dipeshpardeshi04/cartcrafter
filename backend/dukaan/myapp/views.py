@@ -11,7 +11,7 @@ from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
 from dukaan.serializers import ProductsSerializer,UserSerializer,CartSerializer,ShopsSerializer,ShopsCreateSerializer
-from myapp.models import Productss,Cart,CartItemm,Shops #card
+from myapp.models import Productss,Carts,CartItemm,Shops #card
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.decorators import permission_classes
 # from rest_framework import serializers
@@ -169,51 +169,6 @@ def create_shop(request):
         shop = serializer.save(owner=request.user)
         return Response({"message": "Shop created successfully", "data": ShopsSerializer(shop).data}, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-# @csrf_exempt
-# @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
-# def create_shop(request):
-#     serializer = ShopsSerializer(data=request.data, context={'request': request})
-#     # serializer_2 = ShopsallSerializer(data=request.data, context={'request': request})
-#     user = request.user
-#     product_id = request.data.get('shop_id')
-#     # quantity = request.data.get('quantity', 1)
-    
-#     if user.is_authenticated:
-#         cart, created = alls.objects.get_or_create(user=user)
-#         product = Shops.objects.get(id=id)
-#         cart_item, created = ShopItem.objects.get_or_create(cart=cart, product=product)
-#         # cart_item.quantity = quantity
-#         cart_item.save()
-#     if serializer.is_valid() :
-#         serializer.save()
-#         # serializer_2.save()
-#         return Response({
-#             "message": "Shop created successfully",
-#             "data": serializer.data
-#         }, status=status.HTTP_201_CREATED)
-
-#     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-# @csrf_exempt
-# @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# def get_user_shops(request):
-#     user = request.user  # Get the authenticated user
-#     shops = Shops.objects.filter(owner=user)  # Fetch shops belonging to the user
-#     serializer = ShopsSerializer(shops, many=True)  # Serialize the shop data
-#     return Response(serializer.data, status=status.HTTP_200_OK)
-
-
-# @csrf_exempt
-# @api_view(['GET'])
-# @permission_classes([IsAuthenticated])
-# def get_my_shops(request):
-#     shops = Shops.objects.filter(owner=request.user)  # Get only shops owned by the user
-#     serializer = ShopsSerializer(shops, many=True)
-#     return JsonResponse(serializer.data, safe=False)
-
 
 @csrf_exempt
 @api_view(['PUT'])
@@ -416,7 +371,7 @@ def add_to_cart(request):
     quantity = request.data.get('quantity', 1)
     
     if user.is_authenticated:
-        cart, created = Cart.objects.get_or_create(user=user)
+        cart, created = Carts.objects.get_or_create(user=user)
         product = Productss.objects.get(id=product_id)
         cart_item, created = CartItemm.objects.get_or_create(cart=cart, product=product)
         cart_item.quantity = quantity
@@ -432,7 +387,7 @@ def add_to_cart(request):
 def get_cart_items(request):
     user = request.user
     if user.is_authenticated:
-        cart = Cart.objects.get(user=user)
+        cart = Carts.objects.get(user=user)
         serializer = CartSerializer(cart)
         print(serializer.data)
         return Response(serializer.data)
@@ -443,7 +398,7 @@ def get_cart_items(request):
 @permission_classes([IsAuthenticated])
 def remove_cart_item(request, item_id):
     try:
-        cart = Cart.objects.get(user=request.user)
+        cart = Carts.objects.get(user=request.user)
         print(f"User's cart: {cart}")
         cart_item = CartItemm.objects.get(id=item_id, cart=cart)
         print(f"Item to delete: {cart_item}")
@@ -451,5 +406,5 @@ def remove_cart_item(request, item_id):
         return Response({"message": "Item removed"}, status=status.HTTP_200_OK)
     except CartItemm.DoesNotExist:
         return Response({"error": "Item not found"}, status=status.HTTP_404_NOT_FOUND)
-    except Cart.DoesNotExist:
+    except Carts.DoesNotExist:
         return Response({"error": "Cart not found"}, status=status.HTTP_404_NOT_FOUND)

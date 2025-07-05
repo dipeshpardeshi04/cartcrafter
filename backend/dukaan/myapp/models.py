@@ -30,7 +30,7 @@ class Productss(models.Model):
     def __str__(self):
         return self.prod_name
     
-class Cart(models.Model):
+class Carts(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
@@ -38,7 +38,7 @@ class Cart(models.Model):
         return f"{self.user}'s Cart"
 
 class CartItemm(models.Model):
-    cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='items' ,null=True)
+    cart = models.ForeignKey(Carts, on_delete=models.CASCADE, related_name='items' ,null=True)
     product = models.ForeignKey(Productss, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
 

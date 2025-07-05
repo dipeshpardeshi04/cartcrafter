@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from myapp.models import Productss,Cart,CartItemm,Shops
+from myapp.models import Productss,Carts,CartItemm,Shops
 # from django.contrib.auth import get_user_model
 
 # Owner = get_user_model()
@@ -97,7 +97,7 @@ class CartItemSerializer(serializers.ModelSerializer):
 class CartSerializer(serializers.ModelSerializer):
     items = CartItemSerializer(read_only=True, many=True)
     class Meta:
-        model = Cart
+        model = Carts
         fields = ['id', 'user', 'created_at', 'items']
         
         

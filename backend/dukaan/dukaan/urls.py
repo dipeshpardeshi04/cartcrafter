@@ -28,9 +28,14 @@ from django.urls import path
 from myapp.views import RegisterAPI, LoginAPI, StudentApi,dipesh, add_to_cart, get_cart_items,remove_cart_item,RegisterOwnerAPI,LoginOwnerAPI,all_shops,create_shop,  update_shop, delete_shop, all_shops,  create_shop, my_shops, ProductCreateAPI, ShopListAPI, products_by_shop, update_product, delete_product, ProductDetailView, update_product11,get_shop_details
 from django.contrib import admin
 from django.urls import path
+from django.http import HttpResponse
 
 
+def home(request):
+    return HttpResponse("Welcome to the homepage!")
+    
 urlpatterns = [
+    path('', home, name='home'),
     path('api/register/', RegisterAPI.as_view(), name='register'),
     path('api/login/', LoginAPI.as_view(), name='login'),
     path('api/ownerregister/', RegisterOwnerAPI.as_view(), name='owner-register'),

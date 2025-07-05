@@ -99,7 +99,12 @@ DATABASES = {
     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
 
 }
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -150,6 +155,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'cartcrafter.onrender.com','https://c
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',  # Your frontend's origin
     'http://127.0.0.1:3000',
+    
 ]
 
 CSRF_TRUSTED_ORIGINS = ['https://cartcrafter.netlify.app/']  # Add this to your settings
